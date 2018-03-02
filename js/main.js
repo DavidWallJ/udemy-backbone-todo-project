@@ -1,8 +1,8 @@
 $(document).ready(function() {
 	var todoItems = new TodoItems([
-		new TodoItem({ description: 'walk the cat' }),
-		new TodoItem({ description: 'buy a cat' }),
-		new TodoItem({ description: 'learn to walk' })
+		new TodoItem({ id: 1, description: 'walk the cat' }),
+		new TodoItem({ id: 2, description: 'buy a cat' }),
+		new TodoItem({ id: 3, description: 'learn to walk' })
 	]);
 
 	var bus = _.extend({}, Backbone.Events);
