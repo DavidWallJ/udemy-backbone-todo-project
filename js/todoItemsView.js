@@ -7,6 +7,11 @@ var TodoItemsView = Backbone.View.extend({
 		if (!(options && options.model)) throw new Error('No model was provided.');
 		this.bus = options.bus;
 		this.bus.on('addTodo', this.onAddTodo, this);
+		this.model.on('remove', this.onRemoveTodoItem, this);
+	},
+
+	onRemoveTodoItem: function(todoItem) {
+		this.$('li#' + todoItem.id).remove();
 	},
 
 	onAddTodo: function(todoItem) {

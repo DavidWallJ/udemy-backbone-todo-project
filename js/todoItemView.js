@@ -9,11 +9,8 @@ var TodoItemView = Backbone.View.extend({
 		}
 		// when changes are made to this model rerender the page
 		this.model.on('change', this.render, this);
-		this.model.on('remove', this.onRemoveTodoItem, this);
 	},
-	onRemoveTodoItem: function(todoItem) {
-		this.$('li#' + todoItem.id).remove();
-	},
+
 	events: {
 		'click #toggle': 'onClickToggle',
 		'click #delete': 'onClickDelete'
